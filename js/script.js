@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 5. Interactive Responsible AI Evaluation Calculator
+  // 5. Interactive Responsible AI Evaluation Calculator (Dynamic Color Differentiation)
   const fairnessSlider = document.getElementById('slider-fairness');
   const privacySlider = document.getElementById('slider-privacy');
   const transparencySlider = document.getElementById('slider-transparency');
@@ -99,47 +99,117 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const overallScoreElem = document.getElementById('overall-trust-score');
   const scoreVerdictElem = document.getElementById('score-verdict');
+  const summaryCardElem = document.querySelector('.scorecard-summary-card');
+
+  // Helper to determine color tier based on metric percentage
+  function getScoreTier(val) {
+    if (val >= 90) {
+      return {
+        color: '#10b981', // High Standard / Emerald
+        bgSubtle: 'rgba(16, 185, 129, 0.16)',
+        label: 'Tier-1 Compliant (EU AI Act High Standard)',
+        icon: 'bi-shield-check',
+        glow: '0 0 20px rgba(16, 185, 129, 0.4)'
+      };
+    } else if (val >= 75) {
+      return {
+        color: '#38bdf8', // Strong / Cyan Blue
+        bgSubtle: 'rgba(56, 189, 248, 0.16)',
+        label: 'Strong Compliance (Minor Action Required)',
+        icon: 'bi-shield-shaded',
+        glow: '0 0 20px rgba(56, 189, 248, 0.4)'
+      };
+    } else if (val >= 60) {
+      return {
+        color: '#f59e0b', // Moderate / Amber
+        bgSubtle: 'rgba(245, 158, 11, 0.16)',
+        label: 'Moderate Risk (Remediation Needed)',
+        icon: 'bi-exclamation-triangle',
+        glow: '0 0 20px rgba(245, 158, 11, 0.4)'
+      };
+    } else {
+      return {
+        color: '#ef4444', // Critical / Red
+        bgSubtle: 'rgba(239, 68, 68, 0.18)',
+        label: 'Critical Risk (Not Production Ready)',
+        icon: 'bi-shield-x',
+        glow: '0 0 20px rgba(239, 68, 68, 0.4)'
+      };
+    }
+  }
+
+  function styleSlider(slider, valElem) {
+    if (!slider) return 0;
+    const val = parseInt(slider.value) || 0;
+    const min = parseInt(slider.min) || 0;
+    const max = parseInt(slider.max) || 100;
+    const pct = Math.max(0, Math.min(100, ((val - min) / (max - min)) * 100));
+
+    if (valElem) {
+      valElem.textContent = `${val}%`;
+      valElem.style.color = '#38bdf8';
+      valElem.style.borderColor = 'rgba(56, 189, 248, 0.55)';
+      valElem.style.backgroundColor = 'rgba(56, 189, 248, 0.14)';
+      valElem.style.boxShadow = '0 0 12px rgba(56, 189, 248, 0.3)';
+    }
+
+    // Dynamic capsule bar fill: Solid Blue on the left, Clean White on the right
+    const fillElem = slider.parentElement ? slider.parentElement.querySelector('.compliance-bar-fill') : null;
+    if (fillElem) {
+      fillElem.style.width = `${pct}%`;
+    }
+
+    return val;
+  }
 
   function updateTrustScore() {
     if (!fairnessSlider) return;
 
-    const f = parseInt(fairnessSlider.value) || 0;
-    const p = parseInt(privacySlider.value) || 0;
-    const t = parseInt(transparencySlider.value) || 0;
-    const o = parseInt(oversightSlider.value) || 0;
-    const r = parseInt(robustnessSlider.value) || 0;
-
-    if (fairnessVal) fairnessVal.textContent = `${f}%`;
-    if (privacyVal) privacyVal.textContent = `${p}%`;
-    if (transparencyVal) transparencyVal.textContent = `${t}%`;
-    if (oversightVal) oversightVal.textContent = `${o}%`;
-    if (robustnessVal) robustnessVal.textContent = `${r}%`;
+    const f = styleSlider(fairnessSlider, fairnessVal);
+    const p = styleSlider(privacySlider, privacyVal);
+    const t = styleSlider(transparencySlider, transparencyVal);
+    const o = styleSlider(oversightSlider, oversightVal);
+    const r = styleSlider(robustnessSlider, robustnessVal);
 
     const average = Math.round((f + p + t + o + r) / 5);
+    const overallTier = getScoreTier(average);
 
     if (overallScoreElem) {
       overallScoreElem.textContent = `${average}%`;
+      overallScoreElem.style.color = overallTier.color;
+      overallScoreElem.style.textShadow = overallTier.glow;
+    }
+
+    if (summaryCardElem) {
+      summaryCardElem.style.borderColor = `${overallTier.color}55`;
+      summaryCardElem.style.boxShadow = `0 15px 35px rgba(0,0,0,0.5), 0 0 25px ${overallTier.color}20`;
     }
 
     if (scoreVerdictElem) {
-      if (average >= 90) {
-        scoreVerdictElem.innerHTML = `<span class="badge bg-success-subtle text-success border border-success px-3 py-2"><i class="bi bi-shield-check me-1"></i> Tier-1 Compliant (EU AI Act High Standard)</span>`;
-      } else if (average >= 75) {
-        scoreVerdictElem.innerHTML = `<span class="badge bg-warning-subtle text-warning border border-warning px-3 py-2"><i class="bi bi-exclamation-triangle me-1"></i> Moderate Risk (Remediation Needed)</span>`;
-      } else {
-        scoreVerdictElem.innerHTML = `<span class="badge bg-danger-subtle text-danger border border-danger px-3 py-2"><i class="bi bi-shield-x me-1"></i> High Risk (Not Production Ready)</span>`;
-      }
+      scoreVerdictElem.innerHTML = `
+        <span class="badge border px-3 py-2 font-mono" style="color: ${overallTier.color}; border-color: ${overallTier.color} !important; background: ${overallTier.bgSubtle}; font-size: 0.85rem; box-shadow: 0 0 14px ${overallTier.color}25;">
+          <i class="bi ${overallTier.icon} me-1"></i> ${overallTier.label}
+        </span>
+      `;
     }
   }
 
-  const sliders = [fairnessSlider, privacySlider, transparencySlider, oversightSlider, robustnessSlider];
-  sliders.forEach(slider => {
+  const sliderPairs = [
+    fairnessSlider,
+    privacySlider,
+    transparencySlider,
+    oversightSlider,
+    robustnessSlider
+  ];
+
+  sliderPairs.forEach(slider => {
     if (slider) {
       slider.addEventListener('input', updateTrustScore);
+      slider.addEventListener('change', updateTrustScore);
     }
   });
 
-  // Initial calculation
+  // Initial calculation & color paint
   updateTrustScore();
 
   // 6. Contact Form Submission Feedback
