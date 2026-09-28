@@ -437,14 +437,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const t = translations[lang] || translations.en;
 
     // Navbar
-    const navLinks = document.querySelectorAll('#navbarNav .nav-link');
-    if (navLinks[0]) navLinks[0].textContent = t.navHome;
-    if (navLinks[1]) navLinks[1].textContent = t.navExpertise;
-    if (navLinks[2]) navLinks[2].textContent = t.navWork;
-    if (navLinks[3]) navLinks[3].textContent = t.navArch;
-    if (navLinks[4]) navLinks[4].textContent = t.navExp;
-    if (navLinks[5]) navLinks[5].textContent = t.navBook;
-    if (navLinks[6]) navLinks[6].textContent = t.navContact;
+    const navLinkTexts = document.querySelectorAll('#navbarNav .nav-link-text');
+    if (navLinkTexts[0]) navLinkTexts[0].textContent = t.navHome;
+    if (navLinkTexts[1]) navLinkTexts[1].textContent = t.navExpertise;
+    if (navLinkTexts[2]) navLinkTexts[2].textContent = t.navWork;
+    if (navLinkTexts[3]) navLinkTexts[3].textContent = t.navArch;
+    if (navLinkTexts[4]) navLinkTexts[4].textContent = t.navExp;
+    if (navLinkTexts[5]) navLinkTexts[5].textContent = t.navBook;
+    if (navLinkTexts[6]) navLinkTexts[6].textContent = t.navContact;
 
     const navTalk = document.querySelector('.nav-contact-btn span');
     if (navTalk) navTalk.textContent = t.navTalk;
