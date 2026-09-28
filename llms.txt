@@ -1,0 +1,95 @@
+# Ugochukwu Maduagufor-Ogoke
+
+> Software Engineer, AI Automation Developer, IT Specialist, and Author of *Ethics in Code*. Specializing in full-stack web applications (React, Node.js, JavaScript, Python), practical AI automation workflows (n8n, Claude Code, Gemini AI), document processing, organizational IT infrastructure, and responsible AI governance.
+
+- **Portfolio URL**: https://maxugoski.github.io/Portfolio/
+- **GitHub**: https://github.com/Maxugoski
+- **LinkedIn**: https://www.linkedin.com/in/ugochukwu-ogoke-212508177/
+- **Email**: ugochukwuogoke@gmail.com
+- **Current Location**: Enugu, Nigeria
+- **Mobility & Relocation**: Relocating to Germany in 2026. Actively seeking Werkstudent Softwareentwicklung, Junior Software Engineer, AI Automation Developer, and IT Specialist / IT Support roles (On-site in Germany, Hybrid, or Remote).
+- **Languages**: English (Fluent / Professional), German (Learning, A1/A2 preparation).
+
+---
+
+## Core Competencies & Skills
+
+### Software Development
+- **Languages**: JavaScript (ES6+), TypeScript, Python, PHP, HTML5, CSS3, SQL.
+- **Frontend**: React.js, Bootstrap 5, Three.js (3D WebGL), Responsive Web Design, Web Accessibility (WCAG 2.1 AA).
+- **Backend & APIs**: Node.js, Express.js, RESTful API Design, Webhooks, Authentication, Microservices.
+- **Databases**: MongoDB, MySQL, PostgreSQL.
+- **Tools & DevOps**: Git, GitHub, cPanel, Cloudinary, VS Code, Linux/Unix, Windows.
+
+### AI & Automation Systems
+- **Workflow Automation**: n8n, Webhook triggers, cross-application event routing, business process automation.
+- **Developer AI Tools**: Claude Code, Google Gemini API, OpenAI API.
+- **Productivity & Content**: AI Document Processing, automated document summarization & editing, AI Image & Video generation pipelines.
+- **Focus**: Building practical, high-efficiency workflows that eliminate manual operational overhead and integrate AI into daily business operations.
+
+### IT Specialist & Systems Administration
+- **IT Infrastructure**: Diagnostics, hardware and OS troubleshooting, network administration, organizational platform maintenance.
+- **Service Level Agreements**: Proven 95% SLA resolution rate within 24 hours for technical issues.
+- **Data & Security**: Automated backup scheduling, cybersecurity fundamentals, GDPR-compliant data governance.
+- **AI Ethics & Audit**: Author of *Ethics in Code: A Framework for Modern Software & Responsible AI*, European AI Act alignment, human oversight, and algorithmic transparency.
+
+---
+
+## Flagship Projects
+
+### 1. Altramax Learn — AI-Powered Digital Education Platform
+- **Live Demo**: https://altramaxlearn.com
+- **Role**: Founder & Lead Full-Stack Engineer
+- **Tech Stack**: React.js, Node.js, Express, MongoDB, Gemini AI API, Cloudinary, REST APIs.
+- **Summary**: Modern e-learning platform featuring dynamic course delivery, video streaming, automated multi-currency payment workflows, and an AI-driven quiz assessment engine powered by Google Gemini that generates adaptive questions and certificates.
+
+### 2. AI Workflow Automation & Document Processing Suite
+- **Role**: Lead Developer
+- **Tech Stack**: n8n, Claude Code, Gemini AI, Webhooks, Document Processing.
+- **Summary**: Practical AI automation suite connecting enterprise tools with everyday workflows. Ingests raw documents, extracts structured data, refines text content, and coordinates multi-channel alerts and publishing with zero manual overhead.
+
+### 3. Responsible AI Evaluation Tool & Framework
+- **Role**: Creator & Architect
+- **Tech Stack**: Vanilla JavaScript, CSS Design System, Responsive Canvas / Sliders.
+- **Summary**: Software companion to *Ethics in Code*. Provides an interactive 5-pillar audit tool (Fairness, Privacy, Transparency, Oversight, Robustness) to dynamically score AI applications and generate Composite Trust Index diagnostics aligned with the European AI Act.
+
+### 4. WordWise AI — WordPress Editorial Assistant Extension
+- **Role**: Plugin Developer
+- **Tech Stack**: PHP, JavaScript (ES6+), WordPress Hooks API, OpenAI / Gemini API.
+- **Summary**: Modular WordPress plugin that brings generative AI directly into the Gutenberg block editor, automating meta description generation, readability scoring, and multilingual content extraction.
+
+---
+
+## Work Experience
+
+### Web Developer & IT Support Specialist — Women's Aid Collective (WACOL)
+- *2023 – Present | Enugu, Nigeria*
+- Managed organizational digital infrastructure and core web platforms (https://wacolnigeria.org).
+- Achieved a 95% SLA resolution rate for hardware, network, and software troubleshooting within 24 hours.
+- Boosted organic reach and community engagement by 30–40% via technical SEO and accessibility optimizations.
+
+### Technical & Advocacy Consultant — Women's Aid Collective (WACOL)
+- *Sep 2023 – Feb 2024*
+- Executed on a civil society governance project funded by the **European Union** and managed through the **British Council**.
+- Mentored 3 Civil Society Organizations on digital advocacy frameworks, rights-based technology use, and workflow optimization.
+
+### Research & Data Team Lead — Women's Aid Collective (WACOL)
+- *May 2024 – June 2024*
+- Directed field research and survey operations on the **Women's Voice & Leadership (WVL)** project funded by **ActionAid**.
+- Led data analysis and impact synthesis across 4 major cities in Enugu State, delivering policy reports to partner agencies.
+
+---
+
+## Published Work
+
+### *Ethics in Code: A Framework for Modern Software & Responsible AI*
+- **Author**: Ugochukwu Maduagufor-Ogoke
+- **Topic**: Practical software engineering methodologies for building trustworthy, bias-mitigated, and audit-ready AI systems under the European AI Act and ethical governance standards.
+
+---
+
+## Target Roles in Germany (2026 Strategy)
+- Werkstudent Softwareentwicklung / Software Engineering Working Student
+- Junior Software Engineer (Full-Stack / Frontend / Backend)
+- AI & Automation Developer
+- IT Specialist / IT Support / Systems Administrator

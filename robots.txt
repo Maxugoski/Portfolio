@@ -1,0 +1,33 @@
+# robots.txt for Ugochukwu Maduagufor-Ogoke Portfolio
+# https://maxugoski.github.io/Portfolio/
+
+User-agent: *
+Allow: /
+Allow: /images/
+Allow: /css/
+Allow: /js/
+Allow: /Resume%20of%20Ugochukwu%20Maduagufor-Ogoke.pdf
+Allow: /sitemap.xml
+Allow: /llms.txt
+
+# Explicit allowances for AI Assistants & LLM Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# XML Sitemap
+Sitemap: https://maxugoski.github.io/Portfolio/sitemap.xml

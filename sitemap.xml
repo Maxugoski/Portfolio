@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Main Homepage -->
+  <url>
+    <loc>https://maxugoski.github.io/Portfolio/</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://maxugoski.github.io/Portfolio/" />
+    <xhtml:link rel="alternate" hreflang="de" href="https://maxugoski.github.io/Portfolio/#de" />
+    <image:image>
+      <image:loc>https://maxugoski.github.io/Portfolio/images/ugo.png</image:loc>
+      <image:title>Ugochukwu Maduagufor-Ogoke - Software Engineer, AI Automation &amp; IT Specialist</image:title>
+      <image:caption>Software Engineer, AI Automation Developer, IT Specialist, Author of Ethics in Code</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Technical Resume PDF -->
+  <url>
+    <loc>https://maxugoski.github.io/Portfolio/Resume%20of%20Ugochukwu%20Maduagufor-Ogoke.pdf</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- LLMs context specification file -->
+  <url>
+    <loc>https://maxugoski.github.io/Portfolio/llms.txt</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+</urlset>
