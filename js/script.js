@@ -101,13 +101,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const scoreVerdictElem = document.getElementById('score-verdict');
   const summaryCardElem = document.querySelector('.scorecard-summary-card');
 
+  // 4b. Language Controller State (Default to localStorage or auto-detect German)
+  let currentLang = localStorage.getItem('portfolio_lang') || (navigator.language && navigator.language.toLowerCase().startsWith('de') ? 'de' : 'en');
+
   // Helper to determine color tier based on metric percentage
   function getScoreTier(val) {
+    const isDe = currentLang === 'de';
     if (val >= 90) {
       return {
         color: '#10b981', // High Standard / Emerald
         bgSubtle: 'rgba(16, 185, 129, 0.16)',
-        label: 'Tier-1 Compliant (EU AI Act High Standard)',
+        label: isDe ? 'Stufe-1 Konform (EU AI Act Hoher Standard)' : 'Tier-1 Compliant (EU AI Act High Standard)',
         icon: 'bi-shield-check',
         glow: '0 0 20px rgba(16, 185, 129, 0.4)'
       };
@@ -115,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return {
         color: '#38bdf8', // Strong / Cyan Blue
         bgSubtle: 'rgba(56, 189, 248, 0.16)',
-        label: 'Strong Compliance (Minor Action Required)',
+        label: isDe ? 'Starke Konformität (Geringer Handlungsbedarf)' : 'Strong Compliance (Minor Action Required)',
         icon: 'bi-shield-shaded',
         glow: '0 0 20px rgba(56, 189, 248, 0.4)'
       };
@@ -123,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return {
         color: '#f59e0b', // Moderate / Amber
         bgSubtle: 'rgba(245, 158, 11, 0.16)',
-        label: 'Moderate Risk (Remediation Needed)',
+        label: isDe ? 'Mittleres Risiko (Überarbeitung erforderlich)' : 'Moderate Risk (Remediation Needed)',
         icon: 'bi-exclamation-triangle',
         glow: '0 0 20px rgba(245, 158, 11, 0.4)'
       };
@@ -131,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return {
         color: '#ef4444', // Critical / Red
         bgSubtle: 'rgba(239, 68, 68, 0.18)',
-        label: 'Critical Risk (Not Production Ready)',
+        label: isDe ? 'Kritisches Risiko (Nicht produktionsreif)' : 'Critical Risk (Not Production Ready)',
         icon: 'bi-shield-x',
         glow: '0 0 20px rgba(239, 68, 68, 0.4)'
       };
@@ -247,6 +251,363 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // 7b. Language Switcher & Bilingual Translation System (EN / DE)
+  const translations = {
+    en: {
+      navHome: '// home',
+      navExpertise: '// expertise',
+      navWork: '// work',
+      navArch: '// architecture',
+      navExp: '// experience',
+      navBook: '// book',
+      navContact: '// contact',
+      navResume: '// resume.pdf',
+      navTalk: "[ let's talk ]",
+
+      heroStatus: '// 00. hello world • Relocating to Germany in 2026 • Open to Opportunities',
+      heroSubCaps: 'SOFTWARE ENGINEER, AI & AUTOMATION DEVELOPER.',
+      heroCodeLine: '// Philosophy Background • Full-Stack Web • AI & Automation • Responsible Tech',
+      heroExploreBtn: '<i class="bi bi-code-slash"></i> <span>[ Explore My Work ↓ ]</span>',
+      heroArchBtn: '<i class="bi bi-diagram-3"></i> <span>[ View Architecture ]</span>',
+      heroCvBtn: '<i class="bi bi-download"></i> <span>[ Download CV ]</span>',
+      featuredLabel: 'AS FEATURED IN & IMPACT',
+
+      expertiseTitle: 'My Expertise',
+      exp1Head: 'Software',
+      exp1Sub: 'Development',
+      exp1Body: 'Experienced in both functional and OOP: Python, JavaScript, TypeScript, React, Node.js, Express, and relational & NoSQL database architectures.',
+      exp2Head: 'AI & Automation',
+      exp2Sub: 'AI Workflows & Productivity Systems',
+      exp2Body: 'I build practical AI powered workflows that reduce repetitive work, improve productivity, and connect AI tools with everyday business processes. I use platforms such as n8n, Claude Code, Gemini, and other AI tools to automate tasks, process information, assist with content creation, and streamline digital workflows.',
+      exp3Head: 'Responsible Tech',
+      exp3Sub: 'IT Systems & SLA',
+      exp3Body: 'Author of <em>Ethics in Code</em>. Auditing AI systems for fairness and EU AI Act alignment, plus enterprise IT diagnostics with a documented 95% SLA resolution rate.',
+
+      filterLabel: 'Filter by:',
+      filterAll: 'All 06',
+      filterFullstack: 'Full-Stack 03',
+      filterAi: 'AI & Automation 04',
+      filterResp: 'Responsible AI 02',
+      filterIt: 'IT Systems 02',
+
+      archDevTag: '// 03. architecture',
+      archTitle: 'Visual System Architecture & Interactive Lab',
+      archSubtitle: 'How I architect practical AI automation systems, document workflows, and productivity pipelines from ingestion to delivery.',
+      archTabDoc: '// [ ai document & productivity pipeline ]',
+      archTabAuto: '// [ ai business automation flow ]',
+
+      scoreTitle: 'Responsible AI Evaluation Tool',
+      scoreSubtitle: 'Evaluate an AI system under European AI Act and ethical governance principles. Adjust the 5 metric sliders to dynamically calculate the Trust Index:',
+      scoreLabelFairness: 'Fairness & Non-Discrimination',
+      scoreLabelPrivacy: 'Privacy & Data Governance (GDPR)',
+      scoreLabelTransparency: 'Transparency & Explainability',
+      scoreLabelOversight: 'Human Oversight & Agency',
+      scoreLabelRobustness: 'Technical Robustness & Safety',
+      scoreCompIndex: '// COMPOSITE TRUST INDEX',
+      scorecardSummaryDesc: 'Evaluated in alignment with the Responsible AI Framework in <em>Ethics in Code</em>: ensures system transparency, minimal bias, robust user controls, and regulatory auditability.',
+      scoreDisclaimer: '<i class="bi bi-info-circle me-1" style="color: #38bdf8;"></i> <strong>Note:</strong> The Trust Index is an experimental assessment framework for educational and engineering purposes. It is not a legal compliance certification or substitute for formal AI risk assessment.',
+
+      expDevTag: '// 04. experience',
+      expTitle: "Where I've Worked & Delivered",
+      expSubtitle: 'Demonstrated engineering ownership, real-world IT problem solving, and measurable outcomes.',
+
+      bookDevTag: '// 05. author & published work',
+      bookTitle: 'Bridging Philosophy, Software & AI Governance',
+
+      contactDevTag: '// 07. contact',
+      contactTitle: "Have a project in mind or an engineering opportunity in Germany? Let's talk.",
+      contactSubtitle: 'Open to Werkstudent, Junior Software Engineering, AI Automation and IT Support opportunities in Germany. Relocating to Germany in 2026.',
+      contactDirectEmail: '// DIRECT EMAIL',
+      contactLocationLabel: '// LOCATION & MOBILITY',
+      contactLocationVal: 'Currently in Enugu, Nigeria • Relocating to Germany in 2026',
+      contactConnectLabel: '// CONNECT ACROSS THE WEB',
+      contactNameLabel: '// your name',
+      contactEmailLabel: '// your email',
+      contactSubjectLabel: '// opportunity / subject',
+      contactMessageLabel: '// message',
+      contactSendBtn: '<i class="bi bi-send-fill"></i> [ Send Direct Message ]',
+      contactNamePh: 'e.g. Lukas Schmidt',
+      contactEmailPh: 'lukas@company.de',
+      contactSubjectPh: 'Werkstudent / Junior Software Engineer / AI Role',
+      contactMessagePh: "Hi Ugochukwu, I'd like to connect regarding an opportunity..."
+    },
+    de: {
+      navHome: '// startseite',
+      navExpertise: '// fachgebiete',
+      navWork: '// projekte',
+      navArch: '// architektur',
+      navExp: '// erfahrung',
+      navBook: '// buch',
+      navContact: '// kontakt',
+      navResume: '// lebenslauf.pdf',
+      navTalk: '[ kontaktieren ]',
+
+      heroStatus: '// 00. hallo welt • Umzug nach Deutschland 2026 • Offen für Einstiegschancen',
+      heroSubCaps: 'SOFTWARE-ENTWICKLER, KI- & AUTOMATISIERUNGS-ENTWICKLER.',
+      heroCodeLine: '// Philosophie-Hintergrund • Full-Stack Web • KI & Automatisierung • Verantwortungsbewusste Technologie',
+      heroExploreBtn: '<i class="bi bi-code-slash"></i> <span>[ Meine Projekte ↓ ]</span>',
+      heroArchBtn: '<i class="bi bi-diagram-3"></i> <span>[ Systemarchitektur ]</span>',
+      heroCvBtn: '<i class="bi bi-download"></i> <span>[ Lebenslauf (CV) ]</span>',
+      featuredLabel: 'BEKANNT AUS & PRAXISPROJEKTE',
+
+      expertiseTitle: 'Meine Fachgebiete',
+      exp1Head: 'Software',
+      exp1Sub: 'Entwicklung',
+      exp1Body: 'Erfahren in funktionaler und objektorientierter Programmierung: Python, JavaScript, TypeScript, React, Node.js, Express sowie relationale und NoSQL-Datenbankarchitekturen.',
+      exp2Head: 'KI & Automation',
+      exp2Sub: 'KI-Workflows & Produktivitätssysteme',
+      exp2Body: 'Ich entwickle praxisnahe, KI-gestützte Workflows, die repetitive Aufgaben reduzieren, Produktivität steigern und KI-Tools nahtlos in Geschäftsprozesse einbinden. Ich nutze Plattformen wie n8n, Claude Code, Gemini und generative Medien zur Workflow-Optimierung.',
+      exp3Head: 'Verantwortung',
+      exp3Sub: 'IT-Systeme & SLA',
+      exp3Body: 'Autor von <em>Ethics in Code</em>. Überprüfung von KI-Systemen auf Fairness und EU AI Act-Konformität sowie Enterprise-IT-Support mit einer dokumentierten 95% SLA-Lösungsrate.',
+
+      filterLabel: 'Filtern nach:',
+      filterAll: 'Alle 06',
+      filterFullstack: 'Full-Stack 03',
+      filterAi: 'KI & Automation 04',
+      filterResp: 'Verantwortungsvolle KI 02',
+      filterIt: 'IT-Systeme 02',
+
+      archDevTag: '// 03. architektur',
+      archTitle: 'Visuelle Systemarchitektur & Interaktives Labor',
+      archSubtitle: 'Wie ich praxistaugliche KI-Automatisierung, Dokumenten-Workflows und Produktivitätspipelines von der Erfassung bis zur Bereitstellung architekturriere.',
+      archTabDoc: '// [ ki dokumenten- & produktivitätspipeline ]',
+      archTabAuto: '// [ ki geschäftsautomatisierung (n8n) ]',
+
+      scoreTitle: 'Bewertungstool für verantwortungsbewusste KI',
+      scoreSubtitle: 'Bewerten Sie ein KI-System nach dem EU AI Act und ethischen Leitlinien. Passen Sie die 5 Regler an, um den Trust Index dynamisch zu berechnen:',
+      scoreLabelFairness: 'Fairness & Nichtdiskriminierung',
+      scoreLabelPrivacy: 'Datenschutz & Datenverwaltung (DSGVO)',
+      scoreLabelTransparency: 'Transparenz & Erklärbarkeit',
+      scoreLabelOversight: 'Menschliche Aufsicht & Handlungsfähigkeit',
+      scoreLabelRobustness: 'Technische Robustheit & Sicherheit',
+      scoreCompIndex: '// GESAMTER VERTRAUENSINDEX',
+      scorecardSummaryDesc: 'Bewertet nach dem Responsible AI Framework aus <em>Ethics in Code</em>: garantiert Systemtransparenz, minimale Verzerrung, robuste Nutzerkontrollen und regulatorische Auditierbarkeit.',
+      scoreDisclaimer: '<i class="bi bi-info-circle me-1" style="color: #38bdf8;"></i> <strong>Hinweis:</strong> Der Trust Index ist ein experimentelles Bewertungsinstrument zu Bildungs- und Entwicklungszwecken. Er stellt keine rechtliche Zertifizierung und keinen Ersatz für formelle KI-Risikoanalysen dar.',
+
+      expDevTag: '// 04. berufserfahrung',
+      expTitle: 'Berufserfahrung & Praxisprojekte',
+      expSubtitle: 'Nachgewiesene technische Verantwortung, praktische IT-Problemlösung und messbare Resultate.',
+
+      bookDevTag: '// 05. autor & publikation',
+      bookTitle: 'Verbindung von Philosophie, Software & KI-Governance',
+
+      contactDevTag: '// 07. kontakt',
+      contactTitle: 'Haben Sie ein Projekt oder eine Einstiegsmöglichkeit in Deutschland? Lassen Sie uns sprechen.',
+      contactSubtitle: 'Offen für Werkstudentenstellen, Junior-Softwareentwicklung, KI-Automatisierung und IT-Support in Deutschland. Umzug nach Deutschland im Jahr 2026.',
+      contactDirectEmail: '// DIREKTE E-MAIL',
+      contactLocationLabel: '// STANDORT & MOBILITÄT',
+      contactLocationVal: 'Derzeit in Enugu, Nigeria • Umzug nach Deutschland im Jahr 2026',
+      contactConnectLabel: '// VERNETZEN IM WEB',
+      contactNameLabel: '// ihr name',
+      contactEmailLabel: '// ihre e-mail',
+      contactSubjectLabel: '// betreff / einstiegschance',
+      contactMessageLabel: '// ihre nachricht',
+      contactSendBtn: '<i class="bi bi-send-fill"></i> [ Direktnachricht senden ]',
+      contactNamePh: 'z.B. Lukas Schmidt',
+      contactEmailPh: 'lukas@unternehmen.de',
+      contactSubjectPh: 'Werkstudent / Junior Software Engineer / KI-Rolle',
+      contactMessagePh: 'Hallo Ugochukwu, ich würde gerne bezüglich einer Einstiegsmöglichkeit in Kontakt treten...'
+    }
+  };
+
+  function applyLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('portfolio_lang', lang);
+    document.documentElement.lang = lang;
+
+    // Update active class on buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      if (btn.getAttribute('data-lang') === lang) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    const t = translations[lang] || translations.en;
+
+    // Navbar
+    const navLinks = document.querySelectorAll('#navbarNav .nav-link');
+    if (navLinks[0]) navLinks[0].textContent = t.navHome;
+    if (navLinks[1]) navLinks[1].textContent = t.navExpertise;
+    if (navLinks[2]) navLinks[2].textContent = t.navWork;
+    if (navLinks[3]) navLinks[3].textContent = t.navArch;
+    if (navLinks[4]) navLinks[4].textContent = t.navExp;
+    if (navLinks[5]) navLinks[5].textContent = t.navBook;
+    if (navLinks[6]) navLinks[6].textContent = t.navContact;
+
+    const navTalk = document.querySelector('.nav-contact-btn span');
+    if (navTalk) navTalk.textContent = t.navTalk;
+
+    const navResume = document.querySelector('.nav-resume-btn');
+    if (navResume) navResume.innerHTML = `<i class="bi bi-file-earmark-code"></i> ${t.navResume}`;
+
+    // Hero
+    const heroStatus = document.querySelector('.hero-status-tag span:last-child');
+    if (heroStatus) heroStatus.textContent = t.heroStatus;
+
+    const heroSubCaps = document.querySelector('.hero-sub-caps');
+    if (heroSubCaps) heroSubCaps.textContent = t.heroSubCaps;
+
+    const heroCodeLine = document.querySelector('.hero-code-line code');
+    if (heroCodeLine) heroCodeLine.textContent = t.heroCodeLine;
+
+    const heroButtons = document.querySelectorAll('.hero-buttons-row a');
+    if (heroButtons[0]) heroButtons[0].innerHTML = t.heroExploreBtn;
+    if (heroButtons[1]) heroButtons[1].innerHTML = t.heroArchBtn;
+    if (heroButtons[2]) heroButtons[2].innerHTML = t.heroCvBtn;
+
+    const featuredLabel = document.querySelector('.featured-in-label');
+    if (featuredLabel) featuredLabel.textContent = t.featuredLabel;
+
+    // Expertise
+    const expTitle = document.querySelector('.expertise-section-title');
+    if (expTitle) expTitle.textContent = t.expertiseTitle;
+
+    const expCols = document.querySelectorAll('.expertise-col');
+    if (expCols[0]) {
+      const h = expCols[0].querySelector('.brush-highlight');
+      const s = expCols[0].querySelector('.sub-name');
+      const b = expCols[0].querySelector('.code-inner-body');
+      if (h) h.textContent = t.exp1Head;
+      if (s) s.textContent = t.exp1Sub;
+      if (b) b.textContent = t.exp1Body;
+    }
+    if (expCols[1]) {
+      const h = expCols[1].querySelector('.brush-highlight');
+      const s = expCols[1].querySelector('.sub-name');
+      const b = expCols[1].querySelector('.code-inner-body');
+      if (h) h.textContent = t.exp2Head;
+      if (s) s.textContent = t.exp2Sub;
+      if (b) b.textContent = t.exp2Body;
+    }
+    if (expCols[2]) {
+      const h = expCols[2].querySelector('.brush-highlight');
+      const s = expCols[2].querySelector('.sub-name');
+      const b = expCols[2].querySelector('.code-inner-body');
+      if (h) h.textContent = t.exp3Head;
+      if (s) s.textContent = t.exp3Sub;
+      if (b) b.innerHTML = t.exp3Body;
+    }
+
+    // Filter bar
+    const filterLabel = document.querySelector('.filter-label');
+    if (filterLabel) filterLabel.textContent = t.filterLabel;
+    const filterItems = document.querySelectorAll('.tamal-filter-item');
+    if (filterItems[0]) filterItems[0].textContent = t.filterAll;
+    if (filterItems[1]) filterItems[1].textContent = t.filterFullstack;
+    if (filterItems[2]) filterItems[2].textContent = t.filterAi;
+    if (filterItems[3]) filterItems[3].textContent = t.filterResp;
+    if (filterItems[4]) filterItems[4].textContent = t.filterIt;
+
+    // Architecture
+    const archDev = document.querySelector('.architecture-section .dev-comment-tag');
+    if (archDev) archDev.textContent = t.archDevTag;
+    const archTitle = document.querySelector('.architecture-section .section-title');
+    if (archTitle) archTitle.textContent = t.archTitle;
+    const archSub = document.querySelector('.architecture-section .section-subtitle');
+    if (archSub) archSub.textContent = t.archSubtitle;
+
+    const archTabBtns = document.querySelectorAll('.arch-tab-button');
+    if (archTabBtns[0]) archTabBtns[0].textContent = t.archTabDoc;
+    if (archTabBtns[1]) archTabBtns[1].textContent = t.archTabAuto;
+
+    // Scorecard
+    const scoreTitle = document.querySelector('#scorecard-demo h3');
+    if (scoreTitle) scoreTitle.textContent = t.scoreTitle;
+    const scoreSub = document.querySelector('#scorecard-demo p.small');
+    if (scoreSub) scoreSub.textContent = t.scoreSubtitle;
+
+    const scoreLabels = document.querySelectorAll('.score-slider-label-row span:first-child');
+    if (scoreLabels[0]) scoreLabels[0].textContent = t.scoreLabelFairness;
+    if (scoreLabels[1]) scoreLabels[1].textContent = t.scoreLabelPrivacy;
+    if (scoreLabels[2]) scoreLabels[2].textContent = t.scoreLabelTransparency;
+    if (scoreLabels[3]) scoreLabels[3].textContent = t.scoreLabelOversight;
+    if (scoreLabels[4]) scoreLabels[4].textContent = t.scoreLabelRobustness;
+
+    const scoreCompTag = document.querySelector('.scorecard-summary-card span.text-uppercase');
+    if (scoreCompTag) scoreCompTag.textContent = t.scoreCompIndex;
+
+    const scorecardSummaryDesc = document.querySelector('.scorecard-summary-card p.small');
+    if (scorecardSummaryDesc) scorecardSummaryDesc.innerHTML = t.scorecardSummaryDesc;
+
+    const scoreDisclaimer = document.querySelector('.scorecard-summary-card .border-top p');
+    if (scoreDisclaimer) scoreDisclaimer.innerHTML = t.scoreDisclaimer;
+
+    // Experience Section
+    const expSectionDev = document.querySelector('.experience-section .dev-comment-tag');
+    if (expSectionDev) expSectionDev.textContent = t.expDevTag;
+    const expSectionTitle = document.querySelector('.experience-section .section-title');
+    if (expSectionTitle) expSectionTitle.textContent = t.expTitle;
+    const expSectionSub = document.querySelector('.experience-section .section-subtitle');
+    if (expSectionSub) expSectionSub.textContent = t.expSubtitle;
+
+    // Contact Section
+    const contactSectionDev = document.querySelector('.contact-section .dev-comment-tag');
+    if (contactSectionDev) contactSectionDev.textContent = t.contactDevTag;
+    const contactSectionTitle = document.querySelector('.contact-section .section-title');
+    if (contactSectionTitle) contactSectionTitle.textContent = t.contactTitle;
+    const contactSectionSub = document.querySelector('.contact-section .section-subtitle');
+    if (contactSectionSub) contactSectionSub.textContent = t.contactSubtitle;
+
+    const contactMetaHeadings = document.querySelectorAll('.contact-dev-box .font-mono.small');
+    if (contactMetaHeadings[0]) contactMetaHeadings[0].textContent = t.contactDirectEmail;
+    if (contactMetaHeadings[1]) contactMetaHeadings[1].textContent = t.contactLocationLabel;
+    if (contactMetaHeadings[2]) contactMetaHeadings[2].textContent = t.contactConnectLabel;
+
+    const contactLoc = document.querySelector('.contact-dev-box p.text-white');
+    if (contactLoc) contactLoc.textContent = t.contactLocationVal;
+
+    const formLabels = document.querySelectorAll('#contactForm .form-label');
+    if (formLabels[0]) formLabels[0].textContent = t.contactNameLabel;
+    if (formLabels[1]) formLabels[1].textContent = t.contactEmailLabel;
+    if (formLabels[2]) formLabels[2].textContent = t.contactSubjectLabel;
+    if (formLabels[3]) formLabels[3].textContent = t.contactMessageLabel;
+
+    const inputName = document.getElementById('contactName');
+    if (inputName) inputName.placeholder = t.contactNamePh;
+    const inputEmail = document.getElementById('contactEmail');
+    if (inputEmail) inputEmail.placeholder = t.contactEmailPh;
+    const inputSubject = document.getElementById('contactSubject');
+    if (inputSubject) inputSubject.placeholder = t.contactSubjectPh;
+    const inputMsg = document.getElementById('contactMessage');
+    if (inputMsg) inputMsg.placeholder = t.contactMessagePh;
+
+    const contactBtn = document.querySelector('#contactForm button[type="submit"]');
+    if (contactBtn) contactBtn.innerHTML = t.contactSendBtn;
+
+    // Update Trust Score dynamically so verdict badge updates to current language
+    if (typeof updateTrustScore === 'function') {
+      updateTrustScore();
+    }
+
+    // Google Translate sync if available
+    triggerGoogleTranslate(lang);
+  }
+
+  function triggerGoogleTranslate(lang) {
+    try {
+      document.cookie = `googtrans=/en/${lang}; path=/;`;
+      const select = document.querySelector('.goog-te-combo');
+      if (select) {
+        select.value = lang;
+        select.dispatchEvent(new Event('change'));
+      }
+    } catch (e) {}
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetLang = this.getAttribute('data-lang');
+      applyLanguage(targetLang);
+    });
+  });
+
+  // Apply saved or auto-detected language
+  applyLanguage(currentLang);
 
   // 8. Dark Theme Default (Tamal Sen Aesthetic)
   document.documentElement.setAttribute('data-theme', 'dark');
