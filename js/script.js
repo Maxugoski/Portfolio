@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return {
         color: '#10b981', // High Standard / Emerald
         bgSubtle: 'rgba(16, 185, 129, 0.16)',
-        label: isDe ? 'Stufe-1 Konform (EU AI Act Hoher Standard)' : 'Tier-1 Compliant (EU AI Act High Standard)',
+        label: isDe ? 'Indikativer Vertrauensindex (EU AI Act Hoher Standard)' : 'Indicative Trust Index (EU AI Act High Standard)',
         icon: 'bi-shield-check',
         glow: '0 0 20px rgba(16, 185, 129, 0.4)'
       };
@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
       navTalk: "[ let's talk ]",
 
       heroStatus: '// 00. hello world • Relocating to Germany in 2026 • Open to Opportunities',
-      heroSubCaps: 'SOFTWARE ENGINEER, AI AUTOMATION DEVELOPER, IT SPECIALIST.',
+      heroSubCaps: 'SOFTWARE ENGINEER, IT SUPPORT, AI AUTOMATION DEVELOPER',
       heroCodeLine: '// Philosophy Background • Full-Stack Web • AI & Automation • IT Specialist • Responsible Tech',
       heroExploreBtn: '<i class="bi bi-code-slash"></i> <span>[ Explore My Work ↓ ]</span>',
       heroArchBtn: '<i class="bi bi-diagram-3"></i> <span>[ View Architecture ]</span>',
@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
       workTitle: 'My Work',
       workDesc: 'Deployed scalable web applications, healthcare clinics, maritime portals, and AI-powered systems using React, Node.js, and WordPress. Delivered custom digital platforms with clean code, fast performance, and measurable business impact.',
       featuredIndicatorLabel: 'Featured Project',
-      featuredIndicatorTitle: 'Allmax Learn App',
+      featuredIndicatorTitle: 'Altramax Learn App',
       featuredViewBtn: 'View Project',
       filterLabel: 'Filter by',
       filterAll: 'All <sup>07</sup>',
@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
       navTalk: '[ kontaktieren ]',
 
       heroStatus: '// 00. hallo welt • Umzug nach Deutschland 2026 • Offen für Einstiegschancen',
-      heroSubCaps: 'SOFTWARE-ENTWICKLER, KI- & AUTOMATISIERUNGS-ENTWICKLER, IT-SPEZIALIST.',
+      heroSubCaps: 'SOFTWARE-ENTWICKLER, IT-SUPPORT, KI- & AUTOMATISIERUNGS-ENTWICKLER.',
       heroCodeLine: '// Philosophie-Hintergrund • Full-Stack Web • KI & Automatisierung • IT-Spezialist • Verantwortungsbewusste Technologie',
       heroExploreBtn: '<i class="bi bi-code-slash"></i> <span>[ Meine Projekte ↓ ]</span>',
       heroArchBtn: '<i class="bi bi-diagram-3"></i> <span>[ Systemarchitektur ]</span>',
@@ -369,7 +369,7 @@ document.addEventListener('DOMContentLoaded', () => {
       workTitle: 'Meine Projekte',
       workDesc: 'Skalierbare Webanwendungen, Fachkliniken, maritime Portale und KI-gestützte Systeme mit React, Node.js und WordPress entwickelt. Maßgeschneiderte digitale Plattformen mit messbarem Mehrwert.',
       featuredIndicatorLabel: 'Ausgewähltes Projekt',
-      featuredIndicatorTitle: 'Allmax Learn App',
+      featuredIndicatorTitle: 'Altramax Learn App',
       featuredViewBtn: 'Projekt ansehen',
       filterLabel: 'Filtern nach',
       filterAll: 'Alle <sup>07</sup>',
