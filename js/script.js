@@ -284,12 +284,16 @@ document.addEventListener('DOMContentLoaded', () => {
       exp3Sub: 'Infrastructure & SLA Systems',
       exp3Body: 'Hands-on IT Specialist: organizational infrastructure management, network administration, troubleshooting with a 95% SLA resolution rate, security standards, and AI system auditability.',
 
-      filterLabel: 'Filter by:',
-      filterAll: 'All 06',
-      filterFullstack: 'Full-Stack 03',
-      filterAi: 'AI & Automation 04',
-      filterResp: 'Responsible AI 02',
-      filterIt: 'IT Systems 02',
+      workTitle: 'My Work',
+      workDesc: 'Deployed scalable web applications, healthcare clinics, maritime portals, and AI-powered systems using React, Node.js, and WordPress. Delivered custom digital platforms with clean code, fast performance, and measurable business impact.',
+      featuredIndicatorLabel: 'Featured Project',
+      featuredIndicatorTitle: 'Allmax Learn App',
+      featuredViewBtn: 'View Project',
+      filterLabel: 'Filter by',
+      filterAll: 'All <sup>07</sup>',
+      filterWeb: 'Web Development <sup>06</sup>',
+      filterWp: 'WordPress &amp; CMS <sup>04</sup>',
+      filterAi: 'AI &amp; Full-Stack <sup>03</sup>',
 
       archDevTag: '// 03. architecture',
       archTitle: 'Visual System Architecture & Interactive Lab',
@@ -362,12 +366,16 @@ document.addEventListener('DOMContentLoaded', () => {
       exp3Sub: 'Infrastruktur & SLA-Systeme',
       exp3Body: 'Praxiserfahrener IT-Spezialist: Verwaltung digitaler Infrastrukturen, Netzwerkadministration, Fehlerbehebung mit 95% SLA-Lösungsrate, IT-Sicherheitsstandards und Auditierung von KI-Systemen.',
 
-      filterLabel: 'Filtern nach:',
-      filterAll: 'Alle 06',
-      filterFullstack: 'Full-Stack 03',
-      filterAi: 'KI & Automation 04',
-      filterResp: 'Verantwortungsvolle KI 02',
-      filterIt: 'IT-Systeme 02',
+      workTitle: 'Meine Projekte',
+      workDesc: 'Skalierbare Webanwendungen, Fachkliniken, maritime Portale und KI-gestützte Systeme mit React, Node.js und WordPress entwickelt. Maßgeschneiderte digitale Plattformen mit messbarem Mehrwert.',
+      featuredIndicatorLabel: 'Ausgewähltes Projekt',
+      featuredIndicatorTitle: 'Allmax Learn App',
+      featuredViewBtn: 'Projekt ansehen',
+      filterLabel: 'Filtern nach',
+      filterAll: 'Alle <sup>07</sup>',
+      filterWeb: 'Webentwicklung <sup>06</sup>',
+      filterWp: 'WordPress &amp; CMS <sup>04</sup>',
+      filterAi: 'KI &amp; Full-Stack <sup>03</sup>',
 
       archDevTag: '// 03. architektur',
       archTitle: 'Visuelle Systemarchitektur & Interaktives Labor',
@@ -492,15 +500,27 @@ document.addEventListener('DOMContentLoaded', () => {
       if (b) b.innerHTML = t.exp3Body;
     }
 
+    // Work Section
+    const workTitle = document.querySelector('.tamal-work-title');
+    if (workTitle) workTitle.textContent = t.workTitle;
+    const workDesc = document.querySelector('.tamal-work-desc');
+    if (workDesc) workDesc.textContent = t.workDesc;
+
+    const featIndicatorLabel = document.querySelector('.featured-indicator-label');
+    if (featIndicatorLabel) featIndicatorLabel.textContent = t.featuredIndicatorLabel;
+    const featIndicatorTitle = document.querySelector('.featured-indicator-title');
+    if (featIndicatorTitle) featIndicatorTitle.textContent = t.featuredIndicatorTitle;
+    const featViewBtn = document.querySelector('.btn-tamal-purple');
+    if (featViewBtn) featViewBtn.textContent = t.featuredViewBtn;
+
     // Filter bar
     const filterLabel = document.querySelector('.filter-label');
     if (filterLabel) filterLabel.textContent = t.filterLabel;
     const filterItems = document.querySelectorAll('.tamal-filter-item');
-    if (filterItems[0]) filterItems[0].textContent = t.filterAll;
-    if (filterItems[1]) filterItems[1].textContent = t.filterFullstack;
-    if (filterItems[2]) filterItems[2].textContent = t.filterAi;
-    if (filterItems[3]) filterItems[3].textContent = t.filterResp;
-    if (filterItems[4]) filterItems[4].textContent = t.filterIt;
+    if (filterItems[0]) filterItems[0].innerHTML = t.filterAll;
+    if (filterItems[1]) filterItems[1].innerHTML = t.filterWeb;
+    if (filterItems[2]) filterItems[2].innerHTML = t.filterWp;
+    if (filterItems[3]) filterItems[3].innerHTML = t.filterAi;
 
     // Architecture
     const archDev = document.querySelector('.architecture-section .dev-comment-tag');
