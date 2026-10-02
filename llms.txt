@@ -38,10 +38,11 @@
 ## Flagship Projects
 
 ### 1. Altramax Learn — AI-Powered Digital Education Platform
-- **Live Demo**: https://altramaxlearn.com
+- **Live Platform**: https://learn.altramax.org
+- **Android App Download**: https://learn.altramax.org/Altramax-Learn.apk
 - **Role**: Founder & Lead Full-Stack Engineer
 - **Tech Stack**: React.js, Node.js, Express, MongoDB, Gemini AI API, Cloudinary, REST APIs.
-- **Summary**: Modern e-learning platform featuring dynamic course delivery, video streaming, automated multi-currency payment workflows, and an AI-driven quiz assessment engine powered by Google Gemini that generates adaptive questions and certificates.
+- **Summary**: Modern e-learning platform and mobile app featuring dynamic course delivery, video streaming, automated multi-currency payment workflows, and an AI-driven quiz assessment engine powered by Google Gemini that generates adaptive questions and certificates.
 
 ### 2. AI Workflow Automation & Document Processing Suite
 - **Role**: Lead Developer
