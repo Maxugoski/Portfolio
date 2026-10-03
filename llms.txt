@@ -72,6 +72,24 @@
 - **Tech Stack**: WordPress, Figma, SEO Architecture, Performance Optimization.
 - **Summary**: Professional maritime portfolio showcasing commercial vessel command operations, offshore fleet project management, and specialized marine certifications.
 
+### 7. Artmine Marine Limited — Marine Logistics & Offshore Services
+- **Live Website**: https://artminemarine.com
+- **Role**: Web Developer
+- **Tech Stack**: WordPress, PHP, Marine Logistics Architecture, Civil Engineering Showcases.
+- **Summary**: Commercial maritime logistics, engineering, and offshore support services platform executing complex projects from vessel chartering to civil engineering works.
+
+### 8. Cultured Ballers — Football Academy & Athlete Development
+- **Live Website**: https://culturedballers.vercel.app/
+- **Role**: Frontend Developer
+- **Tech Stack**: Next.js / React, Vercel, Responsive UI.
+- **Summary**: Modern athletic development web application for a premier football academy developing athletes who excel in soccer with discipline, respect, and cultural awareness.
+
+### 9. Women Aid Collective (WACOL) — Civil Society NGO Platform
+- **Live Website**: https://wacolnigeria.org
+- **Role**: Web Developer & IT Support Specialist
+- **Tech Stack**: WordPress, Digital Infrastructure, Legal Aid Portal, High Security & Accessibility.
+- **Summary**: Comprehensive non-governmental organization web platform supporting women's rights, advocating against gender-based violence, and providing legal aid and justice for survivors.
+
 ---
 
 ## Work Experience
