@@ -55,9 +55,22 @@
 - **Summary**: Software companion to *Ethics in Code*. Provides an interactive 5-pillar audit tool (Fairness, Privacy, Transparency, Oversight, Robustness) to dynamically score AI applications and generate Composite Trust Index diagnostics aligned with the European AI Act.
 
 ### 4. WordWise AI — WordPress Editorial Assistant Extension
+- **GitHub Repository**: https://github.com/Maxugoski/wordwise-ai
 - **Role**: Plugin Developer
 - **Tech Stack**: PHP, JavaScript (ES6+), WordPress Hooks API, OpenAI / Gemini API.
 - **Summary**: Modular WordPress plugin that brings generative AI directly into the Gutenberg block editor, automating meta description generation, readability scoring, and multilingual content extraction.
+
+### 5. Altramax Media — Creative Media & Brand Platform
+- **Live Website**: https://altramax.org/
+- **Role**: Lead Web Developer
+- **Tech Stack**: React.js, Node.js, TypeScript, Express, CMS.
+- **Summary**: Creative media agency platform and content management system showcasing media assets, campaign blog posts, and interactive brand components.
+
+### 6. Steve Johnson Maritime Portfolio
+- **Live Website**: https://stevejohnsonmaritime.com/
+- **Role**: Web Developer & Designer
+- **Tech Stack**: WordPress, Figma, SEO Architecture, Performance Optimization.
+- **Summary**: Professional maritime portfolio showcasing commercial vessel command operations, offshore fleet project management, and specialized marine certifications.
 
 ---
 
