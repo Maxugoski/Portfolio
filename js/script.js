@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
       return {
         color: '#10b981', // High Standard / Emerald
         bgSubtle: 'rgba(16, 185, 129, 0.16)',
-        label: isDe ? 'Indikativer Vertrauensindex (EU AI Act Hoher Standard)' : 'Indicative Trust Index (EU AI Act High Standard)',
+        label: isDe ? 'Indikativer Vertrauensindex' : 'Indicative Trust Index',
         icon: 'bi-shield-check',
         glow: '0 0 20px rgba(16, 185, 129, 0.4)'
       };
