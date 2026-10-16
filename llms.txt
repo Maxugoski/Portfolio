@@ -52,7 +52,7 @@
 ### 3. Responsible AI Evaluation Tool & Framework
 - **Role**: Creator & Architect
 - **Tech Stack**: Vanilla JavaScript, CSS Design System, Responsive Canvas / Sliders.
-- **Summary**: Software companion to *Ethics in Code*. Provides an interactive 5-pillar audit tool (Fairness, Privacy, Transparency, Oversight, Robustness) to dynamically score AI applications and generate Composite Trust Index diagnostics aligned with the European AI Act.
+- **Summary**: Software companion to *Ethics in Code*. Provides an interactive 5-pillar audit tool (Fairness, Privacy, Transparency, Oversight, Robustness) to dynamically score AI applications and generate Composite Trust Index diagnostics aligned with the European AI Act (Regulation (EU) 2024/1689 of 13 June 2024), accompanied by an executive summary viewer and official document download.
 
 ### 4. WordWise AI — WordPress Editorial Assistant Extension
 - **GitHub Repository**: https://github.com/Maxugoski/wordwise-ai

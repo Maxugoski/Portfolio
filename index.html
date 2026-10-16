@@ -445,7 +445,8 @@
           <div class="tamal-work-intro">
             <h2 class="tamal-work-title">My Work</h2>
             <p class="tamal-work-desc">
-              Deployed scalable web applications, healthcare clinics, maritime portals, and AI-powered systems using
+              Deployed scalable web applications, Learning management platform, maritime website, and AI-powered systems
+              using
               React, Node.js, and WordPress. Delivered custom digital platforms with clean code, fast performance, and
               measurable business impact.
             </p>
@@ -888,10 +889,24 @@
               <div class="dev-comment-tag">// interactive tool • ethics in code companion</div>
               <h3 class="h3 fw-bold text-white mb-2" style="color: #ffffff !important; font-size: 1.7rem;">Responsible
                 AI Evaluation Tool</h3>
-              <p class="small mb-4" style="color: #cbd5e1 !important; font-size: 0.98rem; line-height: 1.65;">
+              <p class="small mb-3" style="color: #cbd5e1 !important; font-size: 0.98rem; line-height: 1.65;">
                 Evaluate an AI system under European AI Act and ethical governance principles. Adjust the 5 metric
                 sliders to dynamically calculate the Trust Index:
               </p>
+
+              <!-- Quick Action Buttons directly under Tool Heading -->
+              <div class="d-flex flex-wrap align-items-center gap-2 mb-4">
+                <button type="button" class="btn-dev-outline btn-sm score-read-summary-btn" data-bs-toggle="modal"
+                  data-bs-target="#aiActSummaryModal">
+                  <i class="bi bi-journal-text me-1 text-info"></i>
+                  <span>[ Read summary of ACT ]</span>
+                </button>
+                <a href="OJ_L_202401689_EN_TXT.pdf" download="OJ_L_202401689_EN_TXT.pdf" target="_blank"
+                  rel="noopener noreferrer" class="btn-dev-primary btn-sm score-download-pdf-btn">
+                  <i class="bi bi-download me-1"></i>
+                  <span>[ Download official EU A.I Act of 13 June 2024 Document ]</span>
+                </a>
+              </div>
 
               <div class="score-slider-item">
                 <div class="score-slider-label-row">
@@ -987,6 +1002,40 @@
                     engineering purposes. It is not a legal compliance certification or substitute for formal AI risk
                     assessment.
                   </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Official EU AI Act Regulatory Foundation & Action Bar -->
+            <div class="col-12">
+              <div class="scorecard-act-banner mt-3 pt-3 border-top border-secondary border-opacity-25">
+                <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+                  <div class="d-flex align-items-center gap-3">
+                    <div class="act-badge-icon" aria-hidden="true">
+                      <i class="bi bi-file-earmark-pdf-fill"></i>
+                    </div>
+                    <div>
+                      <div class="act-banner-title font-mono fw-bold text-white">
+                        Official EU AI Act (Regulation EU 2024/1689)
+                      </div>
+                      <div class="act-banner-desc small" style="color: #94a3b8 !important;">
+                        Official Journal of the European Union • 13 June 2024 • Harmonised Rules on Artificial
+                        Intelligence
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-wrap align-items-center gap-2">
+                    <button type="button" class="btn-dev-outline btn-sm score-read-summary-btn" data-bs-toggle="modal"
+                      data-bs-target="#aiActSummaryModal">
+                      <i class="bi bi-journal-text me-1 text-info"></i>
+                      <span>[ Read summary of ACT ]</span>
+                    </button>
+                    <a href="OJ_L_202401689_EN_TXT.pdf" download="OJ_L_202401689_EN_TXT.pdf" target="_blank"
+                      rel="noopener noreferrer" class="btn-dev-primary btn-sm score-download-pdf-btn">
+                      <i class="bi bi-download me-1"></i>
+                      <span>[ Download official EU A.I Act of 13 June 2024 Document ]</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1399,6 +1448,180 @@
       </p>
     </div>
   </footer>
+
+  <!-- ================= EU AI ACT SUMMARY MODAL ================= -->
+  <div class="modal fade modal-ai-act" id="aiActSummaryModal" tabindex="-1" aria-labelledby="aiActSummaryModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header d-flex flex-column align-items-start position-relative">
+          <div class="dev-comment-tag mb-1">// official journal • regulation (eu) 2024/1689</div>
+          <h4 class="modal-title h5 fw-bold text-white mb-0" id="aiActSummaryModalLabel">
+            EU Artificial Intelligence Act (13 June 2024) — Executive Summary
+          </h4>
+          <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+            data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Meta Pill Row -->
+          <div class="d-flex flex-wrap gap-2 mb-4">
+            <span class="badge border border-info border-opacity-25 bg-info-subtle text-info font-mono">
+              <i class="bi bi-calendar3 me-1"></i> Adopted: 13 June 2024
+            </span>
+            <span class="badge border border-primary border-opacity-25 bg-primary-subtle text-primary font-mono">
+              <i class="bi bi-file-earmark-text me-1"></i> OJ L, 2024/1689
+            </span>
+            <span class="badge border border-success border-opacity-25 bg-success-subtle text-success font-mono">
+              <i class="bi bi-globe-europe-africa me-1"></i> Worldwide Extraterritorial Scope
+            </span>
+          </div>
+
+          <!-- Overview & Scope -->
+          <div class="mb-4">
+            <h5 class="text-white fw-bold h6 mb-2">
+              <i class="bi bi-bullseye text-info me-2"></i>1. Overview &amp; Regulatory Purpose
+            </h5>
+            <p class="small text-light text-opacity-75 mb-2" style="line-height: 1.65;">
+              Formally enacted on <strong>13 June 2024</strong> and published in the Official Journal of the European
+              Union,
+              <strong>Regulation (EU) 2024/1689</strong> is the world’s first comprehensive, legally binding horizontal
+              framework for artificial intelligence.
+              Its goal is to foster trustworthy, human-centric AI while safeguarding health, safety, democracy,
+              fundamental rights, and the rule of law.
+            </p>
+            <p class="small text-light text-opacity-75 mb-0" style="line-height: 1.65;">
+              <strong>Extraterritorial Reach:</strong> Applies not only to developers located in the EU, but also to
+              international providers placing AI models or systems on the EU market, or whose AI-generated outputs are
+              utilized within the European Union.
+            </p>
+          </div>
+
+          <!-- 4-Tier Risk-Based Architecture -->
+          <div class="mb-4">
+            <h5 class="text-white fw-bold h6 mb-3">
+              <i class="bi bi-layers-half text-info me-2"></i>2. The 4-Tier Risk Matrix
+            </h5>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="risk-tier-card tier-unacceptable">
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="fw-bold text-danger small font-mono">TIER 1: UNACCEPTABLE RISK</span>
+                    <span class="badge bg-danger">Prohibited</span>
+                  </div>
+                  <p class="small text-light text-opacity-75 mb-0" style="font-size: 0.82rem;">
+                    Banned outright. Includes AI for social scoring, manipulative dark patterns exploiting
+                    vulnerabilities, untargeted scraping of facial images from CCTV/internet, and biometric
+                    categorization deducing sensitive attributes (political beliefs, race, sexual orientation).
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="risk-tier-card tier-high">
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="fw-bold text-warning small font-mono">TIER 2: HIGH RISK</span>
+                    <span class="badge bg-warning text-dark">Strict Compliance</span>
+                  </div>
+                  <p class="small text-light text-opacity-75 mb-0" style="font-size: 0.82rem;">
+                    AI in critical infrastructure, medical devices, CV/recruitment sorting, education grading, credit
+                    scoring, and law enforcement. Subject to pre-market conformity assessments, high data quality
+                    requirements, continuous logging, and independent auditability.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="risk-tier-card tier-limited">
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="fw-bold text-info small font-mono">TIER 3: SPECIFIC TRANSPARENCY</span>
+                    <span class="badge bg-info text-dark">Disclosure</span>
+                  </div>
+                  <p class="small text-light text-opacity-75 mb-0" style="font-size: 0.82rem;">
+                    Chatbots, generative models, emotion recognition systems, and synthetic media (deepfakes). Providers
+                    and deployers must guarantee clear labeling so users know they are interacting with AI-generated or
+                    manipulated content.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="risk-tier-card tier-minimal">
+                  <div class="d-flex justify-content-between align-items-center mb-1">
+                    <span class="fw-bold text-success small font-mono">TIER 4: MINIMAL RISK</span>
+                    <span class="badge bg-success">Permitted</span>
+                  </div>
+                  <p class="small text-light text-opacity-75 mb-0" style="font-size: 0.82rem;">
+                    AI-enabled video games, spam filters, recommendation feeds, and standard business analytics. These
+                    face no mandatory regulatory obligations and represent the majority of AI applications in production
+                    today.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Alignment with Responsible AI Evaluation Tool -->
+          <div class="mb-4">
+            <h5 class="text-white fw-bold h6 mb-2">
+              <i class="bi bi-sliders text-info me-2"></i>3. Alignment with this Portfolio's Evaluation Pillars
+            </h5>
+            <p class="small text-light text-opacity-75 mb-3" style="line-height: 1.65;">
+              The 5 metrics featured in the <strong>Responsible AI Evaluation Tool</strong> above directly
+              operationalize the mandatory requirements established under Chapter III (Articles 9–15) of Regulation (EU)
+              2024/1689:
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="pillar-mini-badge"><i class="bi bi-check-circle-fill text-success"></i> Fairness &amp;
+                Non-Discrimination (Art. 10)</span>
+              <span class="pillar-mini-badge"><i class="bi bi-shield-check text-info"></i> Privacy &amp; Data Governance
+                / GDPR (Art. 10)</span>
+              <span class="pillar-mini-badge"><i class="bi bi-eye-fill text-warning"></i> Transparency &amp;
+                Explainability (Art. 13)</span>
+              <span class="pillar-mini-badge"><i class="bi bi-person-check text-primary"></i> Human Oversight &amp;
+                Agency (Art. 14)</span>
+              <span class="pillar-mini-badge"><i class="bi bi-cpu-fill text-danger"></i> Technical Robustness &amp;
+                Cybersecurity (Art. 15)</span>
+            </div>
+          </div>
+
+          <!-- General Purpose AI & Enforcement -->
+          <div class="mb-2">
+            <h5 class="text-white fw-bold h6 mb-2">
+              <i class="bi bi-shield-exclamation text-info me-2"></i>4. General-Purpose AI (GPAI) &amp; Enforcement
+              Penalties
+            </h5>
+            <p class="small text-light text-opacity-75 mb-2" style="line-height: 1.65;">
+              Foundational models (LLMs/GPAI) must publish training data summaries and respect EU copyright laws. Models
+              trained with &gt;10<sup>25</sup> FLOPs face additional systemic risk mandates (adversarial red-teaming,
+              energy efficiency disclosure, incident reporting).
+            </p>
+            <div class="p-3 rounded bg-dark border border-secondary border-opacity-25">
+              <div class="small text-warning font-mono fw-bold mb-1">// PENALTIES FOR NON-COMPLIANCE</div>
+              <div class="small text-light text-opacity-75" style="font-size: 0.84rem;">
+                • <strong>Prohibited Practices:</strong> Up to <strong>€35 million</strong> or <strong>7%</strong> of
+                total worldwide annual turnover.<br />
+                • <strong>High-Risk Obligations:</strong> Up to <strong>€15 million</strong> or <strong>3%</strong> of
+                global turnover.<br />
+                • <strong>False Information to Regulators:</strong> Up to <strong>€7.5 million</strong> or
+                <strong>1.5%</strong> of global turnover.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer d-flex flex-wrap justify-content-between gap-2">
+          <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689" target="_blank"
+            rel="noopener noreferrer" class="btn-dev-outline btn-sm">
+            <i class="bi bi-box-arrow-up-right me-1"></i> EUR-Lex Official Journal ↗
+          </a>
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-sm btn-outline-secondary font-mono"
+              data-bs-dismiss="modal">Close</button>
+            <a href="OJ_L_202401689_EN_TXT.pdf" download="OJ_L_202401689_EN_TXT.pdf" target="_blank"
+              rel="noopener noreferrer" class="btn-dev-primary btn-sm">
+              <i class="bi bi-download me-1"></i> Download PDF (2.58 MB)
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Bootstrap 5 JavaScript Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

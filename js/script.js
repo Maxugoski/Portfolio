@@ -311,6 +311,10 @@ document.addEventListener('DOMContentLoaded', () => {
       scoreCompIndex: '// COMPOSITE TRUST INDEX',
       scorecardSummaryDesc: 'Evaluated in alignment with the Responsible AI Framework in <em>Ethics in Code</em>: ensures system transparency, minimal bias, robust user controls, and regulatory auditability.',
       scoreDisclaimer: '<i class="bi bi-info-circle me-1" style="color: #38bdf8;"></i> <strong>Note:</strong> The Trust Index is an experimental assessment framework for educational and engineering purposes. It is not a legal compliance certification or substitute for formal AI risk assessment.',
+      scoreActRefTitle: 'Official EU AI Act (Regulation EU 2024/1689)',
+      scoreActRefDesc: 'Official Journal of the European Union • 13 June 2024 • Harmonised Rules on Artificial Intelligence',
+      scoreReadSummaryBtn: '<i class="bi bi-journal-text me-1 text-info"></i> <span>[ Read summary of ACT ]</span>',
+      scoreDownloadPdfBtn: '<i class="bi bi-download me-1"></i> <span>[ Download official EU A.I Act of 13 June 2024 Document ]</span>',
 
       expDevTag: '// 04. experience',
       expTitle: "Where I've Worked & Delivered",
@@ -393,6 +397,10 @@ document.addEventListener('DOMContentLoaded', () => {
       scoreCompIndex: '// GESAMTER VERTRAUENSINDEX',
       scorecardSummaryDesc: 'Bewertet nach dem Responsible AI Framework aus <em>Ethics in Code</em>: garantiert Systemtransparenz, minimale Verzerrung, robuste Nutzerkontrollen und regulatorische Auditierbarkeit.',
       scoreDisclaimer: '<i class="bi bi-info-circle me-1" style="color: #38bdf8;"></i> <strong>Hinweis:</strong> Der Trust Index ist ein experimentelles Bewertungsinstrument zu Bildungs- und Entwicklungszwecken. Er stellt keine rechtliche Zertifizierung und keinen Ersatz für formelle KI-Risikoanalysen dar.',
+      scoreActRefTitle: 'Offizieller EU AI Act (Verordnung EU 2024/1689)',
+      scoreActRefDesc: 'Amtsblatt der Europäischen Union • 13. Juni 2024 • Harmonisierte Regeln für künstliche Intelligenz',
+      scoreReadSummaryBtn: '<i class="bi bi-journal-text me-1 text-info"></i> <span>[ Zusammenfassung des Gesetzes lesen ]</span>',
+      scoreDownloadPdfBtn: '<i class="bi bi-download me-1"></i> <span>[ Offizielles EU AI Act Dokument vom 13. Juni 2024 herunterladen ]</span>',
 
       expDevTag: '// 04. berufserfahrung',
       expTitle: 'Berufserfahrung & Praxisprojekte',
@@ -555,6 +563,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const scoreDisclaimer = document.querySelector('.scorecard-summary-card .border-top p');
     if (scoreDisclaimer) scoreDisclaimer.innerHTML = t.scoreDisclaimer;
+
+    const scoreActTitle = document.querySelector('.act-banner-title');
+    if (scoreActTitle && t.scoreActRefTitle) scoreActTitle.textContent = t.scoreActRefTitle;
+    const scoreActDesc = document.querySelector('.act-banner-desc');
+    if (scoreActDesc && t.scoreActRefDesc) scoreActDesc.textContent = t.scoreActRefDesc;
+    document.querySelectorAll('.score-read-summary-btn').forEach(btn => {
+      if (t.scoreReadSummaryBtn) btn.innerHTML = t.scoreReadSummaryBtn;
+    });
+    document.querySelectorAll('.score-download-pdf-btn').forEach(btn => {
+      if (t.scoreDownloadPdfBtn) btn.innerHTML = t.scoreDownloadPdfBtn;
+    });
 
     // Experience Section
     const expSectionDev = document.querySelector('.experience-section .dev-comment-tag');
